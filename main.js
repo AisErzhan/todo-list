@@ -115,24 +115,14 @@ flex.addEventListener('submit', (event) => {
                         localStorage.setItem('tasks', JSON.stringify(newTaskArr))
                     }
                 })
-    //             el.children[0].addEventListener('change', (e) => {
-    //                  if(el.children[0].checked === true){
-    //                      const newCheck = JSON.parse(localStorage.getItem('tasks')).map((itemS, indexS) => {
-    //                             // el.children[0].checked = 'true';
-    //                           return idx === indexS ? {...itemS, checked: el.children[0].checked} : itemS
-    //                          })
-    //                              localStorage.setItem('tasks', JSON.stringify(newCheck))
-    //  }
-    //             })
-    el.children[0].addEventListener('change', () => {
-        if(el.children[0].checked || !el.children[0].checked){
-            const checkedTaskArr = JSON.parse(localStorage.getItem('tasks')).map((items, indx) => {
-                return idx === indx ? {...items, checked: el.children[0].checked} : items
-        })
-        
-        localStorage.setItem('tasks', JSON.stringify(checkedTaskArr))
-    }
-})
+                el.children[0].addEventListener('change', (e) => {
+                     if(el.children[0].checked === true){
+                         const newCheck = JSON.parse(localStorage.getItem('tasks')).map((itemS, indexS) => {
+                              return idx === indexS ? {...itemS, checked: el.children[0].checked} : itemS
+                             })
+                                 localStorage.setItem('tasks', JSON.stringify(newCheck))
+     }
+                })
         return {
             text: el.children[1].value,
             checked: el.children[0].checked
@@ -142,12 +132,6 @@ flex.addEventListener('submit', (event) => {
     localStorage.setItem('tasks', JSON.stringify(todoArr))
         }
     })
-    if(el.children[0].checked !== 'true'){
-        const newCheck = JSON.parse(localStorage.getItem('tasks')).map((itemS, indexS) => {
-             return idx === indexS ? {...itemS, checked: el.children[0].checked} : itemS
-         })
-         localStorage.setItem('tasks', JSON.stringify(newCheck))
-     }
 
 
 
